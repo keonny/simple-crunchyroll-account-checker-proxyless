@@ -1,6 +1,6 @@
 # Information:
 
-a easily usage simple crunchyroll account checker script, proxyless and without threads.
+a easily usage crunchyroll account checker script, proxyless and without threads.
 
 ### Requeriments:
 - pip install requests
